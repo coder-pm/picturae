@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  picturae-api-app:
+    command: start:dev
+    build:
+      context: .
+    ports:
+      - '8080:8080'
+    volumes:
+      - './src:/var/app/src'
+    environment:
+      API_ADDRESS: '0.0.0.0'
+      API_PORT: '8080'

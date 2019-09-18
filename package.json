@@ -1,16 +1,17 @@
 {
-  "name": "picturae-server",
+  "name": "picturae-api",
   "main": "src/server.ts",
   "engines": {
     "node": "~12"
   },
   "scripts": {
-    "start": "nodemon --exec ts-node src/server.ts",
+    "start:prod": "node dist/server.js",
+    "start:dev": "nodemon --exec ts-node src/server.ts",
     "build": "rm -rf dist && tsc -p ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coder-pm/picturae-server.git"
+    "url": "git+https://github.com/coder-pm/picturae-api.git"
   },
   "author": "Marcin Polak",
   "license": "MIT",

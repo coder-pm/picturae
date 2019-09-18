@@ -1,0 +1,8 @@
+# Exclude all
+*
+
+# Include selected
+!src
+!package.json
+!yarn.lock
+!tsconfig.json
