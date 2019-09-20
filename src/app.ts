@@ -1,7 +1,7 @@
 import * as cors from "cors";
 import * as express from "express";
 import IApiResponse from "./response/api.response";
-import {router as paletteRouter} from "./routes/palette";
+import routes from "./routes";
 
 // create application
 export const app = express();
@@ -10,7 +10,7 @@ export const app = express();
 app.use(cors());
 
 // routes
-app.use("/palette", paletteRouter);
+app.use(routes);
 
 // 404 handler
 app.use((req: express.Request, res: express.Response) => {

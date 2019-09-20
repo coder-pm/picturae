@@ -6,10 +6,10 @@ export const supportedTypes = ["image/jpeg", "image/png", "image/gif"];
 
 // image filter middleware
 export const filter = async (req: Request, res: Response, next: NextFunction) => {
-    if (req.body instanceof Uint8Array || req.body instanceof ArrayBuffer) {
+    if (req.body instanceof Buffer) {
         const type: fileType.FileTypeResult | undefined = fileType(req.body);
         if (type && supportedTypes.indexOf(type.mime) > -1) {
-            req.image = {mime: type.mime, blob: req.body};
+            req.image = {mime: type.mime, data: req.body};
             next();
         } else {
             throw new Error("Unsupported image type");
